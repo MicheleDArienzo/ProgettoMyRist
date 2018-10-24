@@ -2,7 +2,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <style>
-	input{
+	input.head{
 	
 	border: none;
 	background: none;
@@ -13,6 +13,11 @@
 	div.rosso{
 	
 	padding: 10px;
+	}
+	
+	div.ricerca{
+		text-align: center;
+		margin-top: 100px;
 	}
 	
 	
@@ -32,13 +37,13 @@ String areaPrivata = "";
 
 if(session.getAttribute("Login") == null)
 	{
-		registrati = "<form method = 'post' action = 'Registrati'><input type = 'submit' value = 'Registrati'></form>";
-		login = "<form method = 'post' action = 'CheckLogin'><input type = 'submit' value = 'Login' ></form>";
+		registrati = "<form method = 'post' action = 'Registrati'><input class = 'head' type = 'submit' value = 'Registrati'></form>";
+		login = "<form method = 'post' action = 'CheckLogin'><input class = 'head' type = 'submit' value = 'Login' ></form>";
 	}
 	else
 	{
-		logout = "<form method = 'post' action = 'LogOut'><input type = 'submit' value = 'Logout'></form>";
-		areaPrivata = "<form method = 'post' action = 'AreaPrivata'><input type = 'submit' value = 'Area Privata'></form>";
+		logout = "<form method = 'post' action = 'LogOut'><input class = 'head' type = 'submit' value = 'Logout'></form>";
+		areaPrivata = "<form method = 'post' action = 'AreaPrivata'><input type class = 'head' = 'submit' value = 'Area Privata'></form>";
 	}%>
 <div class = "rosso">
 <br>
@@ -52,5 +57,9 @@ if(session.getAttribute("Login") == null)
 
 </div>
 <hr>
+
+<div class = "ricerca">
+<input type = "button" id = "BRicerca" value = "Cerca il Ristorante">
+</div>
 </body>
 </html>
