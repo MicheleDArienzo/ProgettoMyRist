@@ -30,7 +30,7 @@ String logout = "";
 String registrati = "";
 String areaPrivata = "";
 
-if(session.getAttribute("Login") != null)
+if(session.getAttribute("Login") == null)
 	{
 		registrati = "<form method = 'post' action = 'Registrati'><input type = 'submit' value = 'Registrati'></form>";
 		login = "<form method = 'post' action = 'CheckLogin'><input type = 'submit' value = 'Login' ></form>";
