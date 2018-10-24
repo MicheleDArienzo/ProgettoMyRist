@@ -1,5 +1,29 @@
 <html>
+<head>
+<style>
+	input{
+	
+	border: none;
+	background: none;
+	background-color: red;
+	float: right;
+	}
+	
+	div.rosso{
+	background:red;
+	}
+	
+	
+</style>
+
+</head>
 <body>
-<h2>ciao</h2>
+<div class = "rosso">
+<input type = "button" value = "Login" >
+
+</div>
+<div>
+
+</div>
 </body>
 </html>
