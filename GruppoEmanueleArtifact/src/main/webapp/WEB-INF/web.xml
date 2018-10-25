@@ -16,6 +16,24 @@
   	<description></description>
   	<servlet-class>com.MyRist.Controller.LogOut</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>prendiRegioni</servlet-name>
+  	<display-name>prendiRegioni</display-name>
+  	<description></description>
+  	<servlet-class>com.MyRist.Controller.prendiRegioni</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>prendiProvince</servlet-name>
+  	<display-name>prendiProvince</display-name>
+  	<description></description>
+  	<servlet-class>com.MyRist.Controller.prendiProvince</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>prendiComuni</servlet-name>
+  	<display-name>prendiComuni</display-name>
+  	<description></description>
+  	<servlet-class>com.MyRist.Controller.prendiComuni</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Logout</servlet-name>
   	<url-pattern>/Logout</url-pattern>
@@ -23,6 +41,18 @@
   <servlet-mapping>
   	<servlet-name>LogOut</servlet-name>
   	<url-pattern>/LogOut</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>prendiRegioni</servlet-name>
+  	<url-pattern>/prendiRegioni</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>prendiProvince</servlet-name>
+  	<url-pattern>/prendiProvince</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>prendiComuni</servlet-name>
+  	<url-pattern>/prendiComuni</url-pattern>
   </servlet-mapping>
    <welcome-file-list>
     <welcome-file>index.html</welcome-file>

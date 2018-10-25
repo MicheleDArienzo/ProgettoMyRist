@@ -22,7 +22,7 @@ public class Dao {
 		try {
 			initCtx = new InitialContext();
 			envCtx = (Context) initCtx.lookup("java:comp/env");
-			ds = (DataSource)envCtx.lookup("jdbc/amazon");
+			ds = (DataSource)envCtx.lookup("jdbc/italia");
 		}catch(NamingException e) {}
 	}
 	
