@@ -44,6 +44,7 @@ public class prendiComuni extends HttpServlet {
 		HttpSession hs = request.getSession();
 		ArrayList<String> list = comimp.getComuni((String)hs.getAttribute("regioni"), request.getParameter("province"));
 		hs.setAttribute("comuni", list);
+		hs.setAttribute("provincia", request.getParameter("province"));
 		response.sendRedirect("index.jsp");
 	}
 
