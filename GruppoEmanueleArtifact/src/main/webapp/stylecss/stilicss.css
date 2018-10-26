@@ -45,7 +45,7 @@ input.head{
 	}
 	
 	div.rosso{
-	
+	background-color:red;
 	padding: 10px;
 	}
 	
@@ -66,5 +66,14 @@ hr {
   background-color:#FFFF00;
   height: 1px;
 }
-	
+
+.divider{
+    width:5px;
+    height:auto;
+    display:inline-block;
+}
+
+body{
+	background-color:#ffffb3;
+}
 	

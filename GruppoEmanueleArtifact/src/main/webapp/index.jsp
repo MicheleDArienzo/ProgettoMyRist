@@ -8,13 +8,10 @@
 
 <script type="text/javascript" src="jscript/ricercaRist.js"></script>
 <link rel="stylesheet" type="text/css" href="stylecss/stilicss.css">
-<%/*
-Ricerca ristorante con menù a tendina o con nome.
 
-*/ %>
 
 </head>
-<body>
+<body style ='background-color:#ffffb3;'>
 <%@ page import = "com.MyRist.Model.RegioniImpl" %>
 <%@ page import = "com.MyRist.Model.Ristoranti" %>
 <%@ page import = "com.MyRist.Model.TipiCucina" %>
@@ -35,7 +32,7 @@ ArrayList<TipiCucina> tipi = tipimp.getTipiCucina();
 if(session.getAttribute("Login") == null)
 	{
 	
-		registrati = "<form method = 'post' action = 'Registrati'><input class = 'head' type = 'submit' value = 'Registrati'></form>";
+		registrati = "<form method = 'post' action = 'Registrati'><input type = 'submit' class = 'head' value = 'Registrati'></form>";
 		
 		login = "<form method = 'post' action = 'CheckLogin'><input class = 'head' type = 'submit' value = 'Login' ></form>";
 	
@@ -44,19 +41,19 @@ if(session.getAttribute("Login") == null)
 	{
 		logout = "<form method = 'post' action = 'LogOut'><input class = 'head' type = 'submit' value = 'Logout'></form>";
 		
-		gestioneUtente = "<form method = 'post' action = 'GestioneUtente'><input type class = 'head' = 'submit' value = 'Gestione utente'></form>";
+		gestioneUtente = "<form method = 'post' action = 'GestioneUtente'><input type = 'submit' class = 'head'  value = 'Gestione utente'></form>";
 		
 		if((Integer)session.getAttribute("Login") == 1)
 		{
 		
-			gestioneRistorante = "<form method = 'post' action = 'GestioneRistorante'><input type class = 'head' = 'submit' value = 'Gestione Ristorante'></form>";
+			gestioneRistorante = "<form method = 'post' action = 'GestioneRistorante'><input type = 'submit' class = 'head'  value = 'Gestione Ristorante'></form>";
 		
 		}
 	
 	}%>
-<div class = "rosso">
+<div class = "rosso" style = 'background-color:#ff3333; border-bottom-style: solid;'>
 <br>
-<b>Benvunuto su MyRestaurant!</b>
+<img src="logoRestaurant.png" height = '210' width ='280' style = 'float:left;'>
 
 
 
@@ -65,12 +62,13 @@ if(session.getAttribute("Login") == null)
 <br>
 
 </div>
-<hr>
+
 <div class = "ricerca">
+<br><br><br>
 <form method = "post" action = "prendiProvince" name = "formregioni" style = "display:inline;">
 
 <%
-out.println("<select id = 'regioni' name = 'regioni' onchange='document.formregioni.submit()'><option value = 'blank'>Regione</option>");
+out.println("<select class='form-control' style = 'width:150px; display:inline;' id = 'regioni' name = 'regioni' onchange='document.formregioni.submit()'><option value = 'blank'>Regione</option>");
 for(int i = 0; i < regioni.size(); i++)
 {
 	out.println("<option value='"+regioni.get(i)+"'>"+regioni.get(i)+"</option>");
@@ -82,7 +80,7 @@ out.println("</select>");
 
 <form method = "post" action = "prendiComuni" name = "formcomuni" style = "display:inline;">
 
-<select id = "province" name = 'province' onchange='document.formcomuni.submit()'>
+<select class='form-control' style = 'width:150px; display:inline;' id = "province" name = 'province' onchange='document.formcomuni.submit()'>
 
 <option value = 'blank'>Provincia</option>
 
@@ -106,7 +104,7 @@ out.println("</select>");
 </form>
 
 <form method = "post" action = "stampaRistoranti">
-<select id = "comuni" name = 'comuni'><option value = 'blank'>Comuni</option>
+<select class='form-control' style = 'width:150px; display:inline;' id = "comuni" name = 'comuni'><option value = 'blank'>Comune</option>
 
 <%
 	if(session.getAttribute("comuni") != null)
@@ -126,7 +124,7 @@ out.println("</select>");
 
 </select>
 
-<select id = "tipicucina" name = "tipicucina">
+<select class='form-control' style = 'width:150px; display:inline;' id = "tipicucina" name = "tipicucina">
 <option value = 'blank'>Tipo cucina</option>
 <%
 	for(TipiCucina item: tipi)
@@ -135,12 +133,13 @@ out.println("</select>");
 	}
 %>
 </select>
-<input type = "text" name = "nome" id = "nome" placeholder = "Cerca per nome...">
-<input type = submit value = "Cerca">
+<input class='form-control' style = 'width:150px; display:inline;' type = "text" name = "nome" id = "nome" placeholder = "Cerca per nome...">
+<input type = submit value = "Cerca" class = 'btn btn-primary' style = 'background-color: #ffff99; color:black; border-color:#ccccb3;'>
 </form>
 </div>
 <div class = "ricerca">
 <%
+
 	ArrayList<Ristoranti> list = new ArrayList<Ristoranti>();
 	list = (ArrayList<Ristoranti>)session.getAttribute("ricercaCompleta");
 	if(list != null && !list.isEmpty())
